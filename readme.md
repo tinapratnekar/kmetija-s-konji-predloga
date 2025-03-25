@@ -12,8 +12,27 @@ ZA delovanje sledečega boste potrebovali nameščeno zadnjo različico Docker D
 >Edino bodite pozorni, da vsak Docker ukaz pričnete s **sudo**, saj deluje samo z ukazi na *root-u*. Vašega uporabnika lahko dodate kot člana skupine Docker, kar je razloženo na [Dockerdocs](https://docs.docker.com/engine/install/linux-postinstall/).
 
 ## DOCKER COMPOSE
-Datoteka *docker-compose.yml* ima definirane parametre za strežniško arhitekturo, PHP okolje in MySQL. Različice so večinoma najnovejše.
+Datoteka *docker-compose.yml* ima definirane parametre za strežniško arhitekturo, PHP okolje in MySQL. Različice so večinoma najnovejše. Spremenite lahko **SAMO** ime glavne mape (v tem primeru, *predloga-projekta*). Vse ostale datoteke naj ohranijo imena, kot so zastavljena.
 
 ### ZAGON
-Z vzpostavljenim Github Desktop *povilicajte* (fork) projektno mapo in definirajte željeno mesto.
+Z vzpostavljenim Github Desktop *povilicajte* (fork) [predlogo](https://github.com/Acrysius/predloga-projekta-rss) projektne mape in definirajte ime ter željeno mesto, kjer jo boste na sistemu hranili.
 **POZOR!** Ko je projektno mesto enkrat definirano, tiste mape več ***NE PREMIKAJTE!***
+![gumb za vilicanje skladišča](app/public/src/images/1_compose-tutorial.png "Fork button")
+
+V **Visual Studio Code** (zelo priporočeno) odprite mapo projekta:
+> File -> Open folder ...
+
+Sedaj lahko odprete konzolo:
+> Terminal -> New Terminal
+
+![Lokacija odprtja konzole](app/public/src/images/2_compose-tutorial.png "Terminal button")
+
+Ko prvič naložite projektno mapo na računalnik, je vedno treba zapisati sledeči ukaz:
+> docker compose build
+
+Slednje bo sestavilo strežnik za razvoj. Počakamo, da Docker naloži datoteke, ki jih zahteva datoteka *compose*. Da zaženemo strežnik z nastavljenimi parametri, izvedemo sledeči ukaz:
+> docker compose up
+
+Docker bo zagnal storitve vseh zabojnikov, navedenih v datoteki *compose* in sedaj si lahko ogledamo izdelek. Predloga je nastavljena tako, da se kot jedrna mapa ***zaganjanja spletišča*** identificira kot *public*. Vanjo tudi nalagamo vse datoteke, ki jih želimo izvajati in prikazati na spletni strani. Iz mape *public* lahko pobrišete ikono (favicon.ico) in nastavite svojo.
+
+
