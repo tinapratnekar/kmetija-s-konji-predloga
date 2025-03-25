@@ -1,0 +1,25 @@
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./app:/app
+  php:
+    build: 
+      context: .
+      dockerfile: PHP.Dockerfile
+    image: php:fpm
+    volumes:
+      - ./app:/app
+    links:
+      - mysql
+  mysql:
+    image: mysql:9.2.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  
+    
