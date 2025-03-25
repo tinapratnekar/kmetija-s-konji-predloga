@@ -35,4 +35,16 @@ Slednje bo sestavilo strežnik za razvoj. Počakamo, da Docker naloži datoteke,
 
 Docker bo zagnal storitve vseh zabojnikov, navedenih v datoteki *compose* in sedaj si lahko ogledamo izdelek. Predloga je nastavljena tako, da se kot jedrna mapa ***zaganjanja spletišča*** identificira kot *public*. Vanjo tudi nalagamo vse datoteke, ki jih želimo izvajati in prikazati na spletni strani. Iz mape *public* lahko pobrišete ikono (favicon.ico) in nastavite svojo.
 
+## ODPIRANJE SPLETNEGA MESTA
+če želite v brskalniku odpreti datoteko na Docker strežniku, jo morate obvezno odpreti v brskalniku (in ne z dvojnim klikom na datoteko). Tukajšen sistem je nastavljen tako, da se spletna stran odpre, ko vtipkate v iskalnik brskalnika sledeči niz in nato pritisnete ENTER:
+> Windows: 127.0.0.1
+>
+> Linux: 0.0.0.0
+>
+> MacOS: Ne vem, ne morem testirati.
+
+## ZAUSTAVITEV STREŽNIKA
+
+Če želite ustaviti izvajanje strežnika, se soredotočite na konzolo in in pritisnice **CTRL-C** (MacOS sistemi imajo drugače, spet odvisno od različice).
+
 
